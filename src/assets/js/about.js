@@ -1,0 +1,1 @@
+const about = `<h1>I am a page</h1>`
