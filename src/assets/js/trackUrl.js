@@ -42,7 +42,7 @@ window.addEventListener("locationchange", async function() {
     }
   } else {
     // NO aid so now we check if the URL matches our DB to check if url exists to track
-    fetch(API_URL + "/track/check/userMetrics", {
+    fetch(API_URL + "/track/check/pageVisitMetrics", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -55,8 +55,8 @@ window.addEventListener("locationchange", async function() {
       .then(data => {
         // the customer has become a conversion so we remove the tracking
         // console.log(data);
-        // sessionStorage.setItem("specyoAnalytics", data.specyoAnalytics);
-        sessionStorage.removeItem("specyoAnalytics");
+        sessionStorage.setItem("specyoAnalytics", data.specyoAnalytics);
+        // sessionStorage.removeItem("specyoAnalytics");
       });
   }
 });
